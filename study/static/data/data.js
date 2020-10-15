@@ -1,5 +1,6 @@
 const data={
 	list:[
+        {mid:0,path:"",name:"ting",type:"mp3"},
 		{mid:1,path:"",name:"触摸天空",type:"mp3"},
 		{mid:2,path:"",name:"again",type:"mp3"},
 		{mid:3,path:"",name:"Only My Railgun",type:"mp3"},

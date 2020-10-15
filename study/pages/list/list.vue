@@ -10,7 +10,7 @@
 			<view v-for="(item,index) of list" class="flex content">
 				<text>{{item.name}}</text>
 				<text>{{item.type}}</text>
-				<text>操作</text>
+				<text>...</text>
 			</view>
 		</scroll-view>
 		<view>选择</view>

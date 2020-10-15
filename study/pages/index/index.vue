@@ -1,18 +1,18 @@
 <template>
 	<view class="content">
 		<view class="main">
-			
+			{{musicName}}
 		</view>
 		<view class="features flex f_wrap">
-			<button @tap="startMusic">开始</button>
-			<button @tap="pauseMusic">暂停</button>
-			<button @tap="stopMusic">结束</button>
-			<button @tap="addSound">+</button>
-			<button @tap="minusSound">-</button>
+			<button @tap="_startMusic">开始</button>
+			<button @tap="_pauseMusic">暂停</button>
+			<button @tap="_stopMusic">结束</button>
+			<button @tap="_addSound">+</button>
+			<button @tap="_minusSound">-</button>
 			<button>循环</button>
 			<button>随机</button>
-			<button><</button>
-			<button>></button>
+			<button @tap="_prevMusic"><</button>
+			<button @tap="_nextMusic">></button>
 		</view>
 		<view class="now">
 			<text class="toDetail">o</text>
@@ -43,29 +43,48 @@ export default {
 	},
 	onLoad() {
 		console.log(this.username,"1111")
-		this.music=this.playMusic("",this.musicName);
-		this.music.play();
+
 	},
+    mounted(){
+        this.music=this.playMusic(this.list[0],0.5);
+        this.music.play();
+    },
 	methods: {
-		minusSound(){
+        _nextMusic(){
+            this.music.destroy();
+            this.music=this.playMusic(this.list[1],0.5)
+            this.music.play();
+            this.music.onEnded(()=>{
+                this._prevMusic();
+            });
+        },
+        _prevMusic(){
+            this.music.destroy();
+            this.music=this.playMusic(this.list[0])
+            this.music.play();
+            this.music.onEnded(()=>{
+                this._nextMusic();
+            });
+        },
+		_minusSound(){
 			let sound = this.music.volume;
 			sound-=0.1;
 			sound=Math.max(0,sound);
 			this.music.volume=sound;
 		},
-		addSound(){
+		_addSound(){
 			let sound = this.music.volume;
 			sound+=0.1;
 			sound=Math.min(1,sound);
 			this.music.volume=sound;
 		},
-		startMusic(){
+		_startMusic(){
 			this.music.play();
 		},
-		pauseMusic(){
+		_pauseMusic(){
 			this.music.pause();
 		},
-		stopMusic(){
+		_stopMusic(){
 			this.music.stop();
 		},
 	}
