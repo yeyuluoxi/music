@@ -1,0 +1,12 @@
+.flex{
+	display:flex;
+}
+.content{
+	justify-content: space-between;
+}
+.right{
+	float:right;
+}
+.f_wrap{
+	flex-wrap: wrap;
+}
