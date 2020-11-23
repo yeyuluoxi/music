@@ -1,0 +1,15 @@
+.flex{
+	display:flex;
+}
+.content{
+	justify-content: space-between;
+}
+.right{
+	float:right;
+}
+.f_wrap{
+	flex-wrap: wrap;
+}
+view,scroll-view,button,input,text,label{
+	box-sizing: border-box;
+}

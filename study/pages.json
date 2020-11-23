@@ -18,6 +18,14 @@
 				"navigationBarTitleText": "设置"
 			}
         }
+        ,{
+            "path" : "pages/test/test",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "测试"
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
@@ -27,18 +35,35 @@
 	},
 	"tabBar":{
 		"color": "#7A7E83",
-		"selectedColor": "#3cc51f",
+		"selectedColor": "#1296db",
 		"borderStyle": "black",
 		"backgroundColor": "#ffffff",
+        "height":"60px",
+        "fontSize":"12px",
+        "spacing":"0",
+        "midButton":{
+            "text":"4456"
+        },
 		"list": [{
 			"pagePath": "pages/index/index",
-			"text": "音乐"
+			"text": "音乐",
+            "iconPath":"static/image/home.png",
+            "selectedIconPath":"static/image/homeAct.png"
 		}, {
 			"pagePath": "pages/list/list",
-			"text": "列表"
+			"text": "列表",
+            "iconPath":"static/image/center.png",
+            "selectedIconPath":"static/image/centerAct.png"
 		}, {
 			"pagePath": "pages/config/config",
-			"text": "设置"
+			"text": "设置",
+            "iconPath":"static/image/config.png",
+            "selectedIconPath":"static/image/configAct.png"
+		}, {
+			"pagePath": "pages/test/test",
+			"text": "测试",
+            "iconPath":"static/image/test.png",
+            "selectedIconPath":"static/image/testAct.png"
 		}]
 	}
 }

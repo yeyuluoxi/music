@@ -14,7 +14,6 @@
 
 <style>
 	/*每个页面公共css */
-view,scroll-view,button,input,text,label{
-	box-sizing: border-box;
-};
+@import "/static/css/common.css";
+
 </style>

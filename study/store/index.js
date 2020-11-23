@@ -4,7 +4,7 @@ import Vuex from "vuex"
 Vue.use(Vuex)
 
 const state = {
-	username: "test"
+	username: "test",
 };
 
 const mutations = {

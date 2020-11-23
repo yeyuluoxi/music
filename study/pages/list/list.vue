@@ -7,7 +7,7 @@
 				<text>类型</text>
 				<text>操作</text>
 			</view>
-			<view v-for="(item,index) of list" class="flex content">
+			<view v-for="(item,index) of list" class="flex content" :key="index">
 				<text>{{item.name}}</text>
 				<text>{{item.type}}</text>
 				<text>...</text>

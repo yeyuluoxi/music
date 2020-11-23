@@ -4,18 +4,18 @@ import App from './App'
 
 Vue.use(Vuex)
 import store from "./store"
-
 Vue.prototype.$store = store;
 
-//样式文件
-import "static/css/common.css"
+import api from "static/data/api.js"
+Vue.prototype.get = (url,params)=> api.reqest("GET",url,params);
+Vue.prototype.post = (url,params)=> api.request("POST",url,params);
 
 Vue.config.productionTip = false
 
 App.mpType = 'app'
 
 
-Vue.prototype.playMusic = (obj,volume=0.5)=>{
+Vue.prototype.playMusic = (obj,volume=0.2)=>{
     let {path,name,type} = obj;
     type= type||"mp3";
     let music = null;
